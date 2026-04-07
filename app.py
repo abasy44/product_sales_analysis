@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 import pandas as pd
 
@@ -32,6 +31,3 @@ if uploaded_file:
         st.success("البيانات جاهزة للتحليل العميق بواسطة الذكاء الاصطناعي.")
     else:
         st.error("تأكد من وجود أعمدة (Price) و (Cost) في الملف.")
-
-```
-###
