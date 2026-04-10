@@ -18,8 +18,16 @@ if uploaded_file:
         else:
             df = pd.read_excel(uploaded_file)
         
-        # تنظيف أسماء الأعمدة (إزالة المسافات الزائدة)
-        df.columns = df.columns.str.strip()
+    
+        # تنظيف أسماء الأعمدة وتحويلها لحروف صغيرة للمقارنة فقط
+        df.columns = [c.strip().capitalize() for c in df.columns]
+
+        if 'Product' in df.columns:
+           st.subheader("تحليل الأداء للمنتجات")
+           st.bar_chart(df.set_index('Product')['Net_Profit'])
+        else:
+           st.warning("لم يتم العثور على عمود باسم Product لرسم البياني.")
+
 
         # حساب المقاييس الأساسية
         if 'Price' in df.columns and 'Cost' in df.columns:
