@@ -1,4 +1,4 @@
 streamlit
 pandas
 openpyxl
-google_generativeai>=0.5.4
+google_generativeai>=0.7.2
