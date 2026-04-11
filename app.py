@@ -12,7 +12,7 @@ api_key = st.secrets.get("GEMINI_API_KEY")
 if api_key:
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-pro')
     except Exception as e:
         model = None
         st.error(f"فشل في إعداد المستشار: {e}")
